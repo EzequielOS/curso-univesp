@@ -1,4 +1,4 @@
-public class HelloWorld {
+public class Cabana {
 
     public static void main(String[] args) {
       int lateral = 10;

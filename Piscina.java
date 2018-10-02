@@ -1,4 +1,4 @@
-public class piscinadohello {
+public class Piscina {
 
     public static void main(String[] args) {
       //raio da piscina
