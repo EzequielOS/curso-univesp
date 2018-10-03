@@ -22,9 +22,7 @@ public class AreaCasa {
 //====== E termina ==========
 //========= A Area da CABANA =====================
 //=====================================================
- static double Piscina () {
-//raio da piscina
-double raio = 2;
+ static double Piscina(double raio){
   return (Math.PI * Math.pow(raio,2));
 }
 //=================
@@ -35,7 +33,7 @@ public static void main(String[] args) {
 //area da piscina
 double areap;
 Cabana();
-areap = Piscina();
+areap = Piscina(2);
 
 System.out.println("Area da Piscina: "+areap);
 
