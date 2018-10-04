@@ -2,7 +2,13 @@ public class AreaCasa {
 //isso é um atributo=========
 //Variavel Global ou seja pode ser usada em todos os metodos
 static double valorM2 = 1500;
+
 //==== !!!!NÃO FAÇA TODAS AS VARIAVEIS GLOBAIS !!!!!!! ========
+
+static double valor(double area){
+  if (area >= 0) return(valorM2*area);
+return (-1);
+}
 
    static void Cabana(float lateral, float cquarto) {
       float areaq; //área do quarto
@@ -18,11 +24,6 @@ static double valorM2 = 1500;
         areat = areas + 2*areaq;
         System.out.println("A area total equivale: "+areat);
 }
-//
-static double valor(double area){
-valorM2 = 5;
-return (valorM2*area);
-}
 
 //===================================================
 //========== Aqui Começa ===============
@@ -37,13 +38,21 @@ return (valorM2*area);
 //===== A execuçao do Programa
 // ===== começa Aqui
 //========
-public static void main(String[] args) {
+public static void main(String[]args) { //só pode existir 1 "public static void main(String[]args)"
 //area da piscina
 double areap;
 Cabana(11,7);
 areap = Piscina(2); //valor declarado no parametro para variavel raio =2
 
 System.out.println("Area da Piscina: "+areap);
+
+//Foi colocado aqui diferente do Exemplo *vide linha 40
+double preco;
+boolean valorOK = false; //sempre true ou false
+preco = valor(20);
+valorOK = preco >= 0;
+if(valorOK)System.out.println("Valor para construir:"+preco);
+else System.out.println("Valor para construir: NAO PODE SER NEGATIVO!!!");
 
 }
 
