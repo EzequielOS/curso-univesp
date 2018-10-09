@@ -1,20 +1,39 @@
-public class AreaCasa {
+ public class AreaCasa {
 //isso é um atributo=========
 //Variavel Global ou seja pode ser usada em todos os metodos
-static double valorM2 = 1500;
+    static double valorM2 = 1500;
 
 //==== !!!!NÃO FAÇA TODAS AS VARIAVEIS GLOBAIS !!!!!!! ========
-
-static double valor(double area){
-  if (area >= 0) return(valorM2*area);
-return (-1);
+    static double valor(double area){
+      if (area >= 0) return(valorM2*area);
+        return (-1);
 }
 
-   static void Cabana(float lateral, float cquarto) {
-      float areaq; float areas; float areat;
-    //área do quarto //área da sala //area tootal //respectivamente
-
-//Aninhamento de CONDICIONAIS
+    static void Cabana(float lateral, float cquarto) {
+//área do quarto //área da sala //area tootal //respectivamente
+          float areaq; float areas; float areat;
+//----------------------------------------------------------------------
+//Usando operadores LOGICOS **copia da linha 37 - 52**
+/*
+################ OPERADOR "OU" || ################
+if (lateral<0 || cquarto<0)
+System.out.println("Erro:lateral da sala menor que 0");
+################ OPERADOR "E" && ################
+if (lateral<0 && cquarto<0)
+System.out.println("Erro:lateral da sala menor que 0");
+################ OPERADOR "NAO" ! ################
+if (!lateral<0 && cquarto<0)
+System.out.println("Erro:lateral da sala menor que 0");
+else{
+System.out.println("Programa Para o Calculo da area da Casa");
+areas = lateral*lateral;
+################ OPERADOR ""  ################
+return ((raio >= 0) ? Math.PI*Math.pow(raio,2) : (-1);
+\\\\\\\\linhas 60 - 62 operador condiçao////////
+[ . . . ]
+###################################################*/
+//------------------------------------------------------------
+//Aninhamento de CONDICIONAIS **********************************
   if (lateral<0) System.out.println("Erro:lateral da sala menor que 0");
   else {
         if (cquarto<0) System.out.println("Erro:lateral da quarto menor que 0");
@@ -31,8 +50,7 @@ return (-1);
     }
   }
 }
-
-//===================================================
+//*************************************************************
 //========== Aqui Começa ===============
 //====== A Area da Piscina =======
 //====== E termina ==========
