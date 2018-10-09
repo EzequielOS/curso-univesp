@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
  public class AreaCasa {
 //isso é um atributo=========
 //Variavel Global ou seja pode ser usada em todos os metodos
@@ -11,7 +12,7 @@
 
     static void Cabana(float lateral, float cquarto) {
 //área do quarto //área da sala //area tootal //respectivamente
-          float areaq; float areas; float areat;
+          float areaQuarto; float areaSala; float areaTotal;
 //----------------------------------------------------------------------
 //Usando operadores LOGICOS **copia da linha 37 - 52**
 /*
@@ -26,7 +27,7 @@ if (!lateral<0 && cquarto<0)
 System.out.println("Erro:lateral da sala menor que 0");
 else{
 System.out.println("Programa Para o Calculo da area da Casa");
-areas = lateral*lateral;
+areaSala = lateral*lateral;
 ################ OPERADOR ""  ################
 return ((raio >= 0) ? Math.PI*Math.pow(raio,2) : (-1);
 \\\\\\\\linhas 60 - 62 operador condiçao////////
@@ -40,13 +41,13 @@ return ((raio >= 0) ? Math.PI*Math.pow(raio,2) : (-1);
         else{
         // Isso printa a mennsagem "Programa Para o Calculo da area da Casa"
         System.out.println("Programa Para o Calculo da area da Casa");
-        areas = lateral*lateral;
-        System.out.println("A area da sala equivale: "+areas);
-        areaq = cquarto*(lateral/2);
-        System.out.println("A area do quarto equivale: "+areaq);
-        System.out.println("A area do banheiro equivale: "+areaq);
-        areat = areas + 2*areaq;
-        System.out.println("A area total equivale: "+areat);
+        areaSala = lateral*lateral;
+        System.out.println("A area da sala equivale: "+areaSala);
+        areaQuarto = cquarto*(lateral/2);
+        System.out.println("A area do quarto equivale: "+areaQuarto);
+        System.out.println("A area do banheiro equivale: "+areaQuarto);
+        areaTotal = areaSala + 2*areaQuarto;
+        System.out.println("A area total equivale: "+areaTotal);
     }
   }
 }
@@ -66,19 +67,20 @@ return ((raio >= 0) ? Math.PI*Math.pow(raio,2) : (-1);
 //========
 public static void main(String[]args) { //só pode existir 1 "public static void main(String[]args)"
 //area da piscina
-double areap;
+double areaPiscina;
+DecimalFormat dc = new DecimalFormat("0.00");
 Cabana(11,7);
-areap = Piscina(2); //valor declarado no parametro para variavel raio =2
+areaPiscina = Piscina(2); //valor declarado no parametro para variavel raio =2
 
-System.out.println("Area da Piscina: "+areap);
+System.out.println("Area da Piscina: "+dc.format(areaPiscina));
 
 //Foi colocado aqui diferente do Exemplo *vide linha 40
-double preco;
+double precoConstrucao;
 boolean valorOK = false; //sempre true ou false
-preco = valor(20);
-valorOK = preco >= 0;
+precoConstrucao = valor(20);
+valorOK = precoConstrucao >= 0;
 System.out.print("Valor para construir "); //o print difere != do println, pois nao salta linha ao final
-if(valorOK)System.out.println("equivalente:"+preco);
+if(valorOK)System.out.println("equivalente:"+precoConstrucao);
 else System.out.println("nao foi obtido: AREA NEGATIVA!!!");
 
 }
