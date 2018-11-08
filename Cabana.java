@@ -18,7 +18,7 @@ public class Cabana {
         int areaq;
         int areas;
         int areat;
-
+        
         areas = lateral * lateral;
         areat = areas + 2 * areaq;
         areaq = cquarto * (lateral/2);
@@ -28,6 +28,5 @@ public class Cabana {
         System.out.println("A area do quarto equivale "+areaq);
         System.out.println("A area do banheiro equivale "+areaq);
         System.out.println("A area total equivale: "+areat);
-
-  }
+    }
 }
