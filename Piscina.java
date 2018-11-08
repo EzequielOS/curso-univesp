@@ -36,7 +36,7 @@ public class Piscina {
             default: valor = -1;
 
         }
-        return valor;
+        return (area*valor);
     }
 
     public static void main(String[] args) {
@@ -44,9 +44,21 @@ public class Piscina {
         DecimalFormat dc = new DecimalFormat("0.00");
         double raio = 2;
         double areaPiscina;
-
         areaPiscina = Math.PI * Math.pow(raio,2);
 
         System.out.println("Area da Piscina: " + dc.format(areaPiscina));
+
+        double area = 50;
+        int tipo = 0;
+
+        System.out.println("Area\tMaterial\tValor");
+
+        while (area <= 200) {
+            while (tipo <= matPlastico) {
+                System.out.println(area + "\t\t" + tipo + "\t\t" + valorPiscina(area,tipo));
+                tipo += 1;
+            }
+            area += 50;
+        }
     }
 }
