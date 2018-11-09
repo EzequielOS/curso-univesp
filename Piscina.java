@@ -47,18 +47,12 @@ public class Piscina {
         areaPiscina = Math.PI * Math.pow(raio,2);
 
         System.out.println("Area da Piscina: " + dc.format(areaPiscina));
-
-        double area = 50;
-        int tipo = 0;
-
         System.out.println("Area\tMaterial\tValor");
 
-        while (area <= 200) {
-            while (tipo <= matPlastico) {
+        for (double area = 50; area <= 200; area += 50){
+            for (int tipo = matAlvenaria; tipo <= matPlastico; tipo++){
                 System.out.println(area + "\t\t" + tipo + "\t\t" + valorPiscina(area,tipo));
-                tipo += 1;
-            }
-            area += 50;
+            } //"x += 5" ... "x -= 5" ... "x *= 5" ... "x /= 5" ... "x %= 5" ... 
         }
     }
 }
