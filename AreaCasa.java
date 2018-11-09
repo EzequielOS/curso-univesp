@@ -39,12 +39,42 @@ public class AreaCasa {
         }
     }
 
+    static final int matAlvenaria = 0;
+    static final int matVinil = 1;
+    static final int matFibra = 2;
+    static final int matPlastico = 3;
+    static double[] matPrecos = {1500, 1100, 750, 500};
+
     static double Piscina(double raio){ //variavel declarada no parametro
         if (raio >= 0){
             return Math.PI * Math.pow(raio,2);
         } else {
             return(-1);
         }
+    }
+
+    static double valorPiscina(double area, int material) {
+
+        if(material < matAlvenaria || material > matPlastico || area < 0) {
+            return(-1);
+        }
+        return(area * matPrecos[material]);
+    }
+
+    static double valor(double area) {
+        if (area >= 0)
+            return (valorM2 * area);
+        return (-1);
+    }
+
+    static double media(double[] arranjo){
+
+        double calcMedia = 0;
+
+        for(double valor : arranjo) {
+            calcMedia += valor;
+        }
+        return (calcMedia / arranjo.length);
     }
 
     public static void main(String[]args) {
@@ -70,12 +100,11 @@ public class AreaCasa {
         } else {
             System.out.println("nao foi obtido: AREA NEGATIVA!!!");
         }
-    }
 
-    static double valor(double area){
-        if (area >= 0){
-            return(valorM2 * area);
+        System.out.println("\tValor");
+
+        for (int i = matAlvenaria; i <= matPlastico; i++){
+            System.out.println(media(matPrecos));
         }
-        return (-1);
     }
 }
