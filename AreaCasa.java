@@ -45,6 +45,20 @@ public class AreaCasa {
     static final int matPlastico = 3;
     static double[] matPrecos = {1500, 1100, 750, 500};
 
+    static char[][] nomes = {{'A','l','v','e','n','a','r','i','a'},
+        {'V','i','n','i','l'},
+        {'F','i','b','r','a'},
+        {'P','l','a','s','t','i','c','o'},
+    };
+
+
+    public static void carregaValores(double[][] m){
+        for (int i = 0; i < m.length; i++){
+            for (int j = 50; j <= 200; j += 50){
+                m[i][j / 50 - 1] = valorPiscina (j,i);
+            }
+        }
+    }
     static double Piscina(double raio){ //variavel declarada no parametro
         if (raio >= 0){
             return Math.PI * Math.pow(raio,2);
@@ -101,10 +115,18 @@ public class AreaCasa {
             System.out.println("nao foi obtido: AREA NEGATIVA!!!");
         }
 
-        System.out.println("\tValor");
+        System.out.print("\tValores para construir piscina\n");
+        System.out.print("Eixo X: 50 | 100 | 150 | 200 | m2\n");
+        System.out.print("Eixo Y: Alvenaria|Vinil|Plastico|Fibra\n");
 
-        for (int i = matAlvenaria; i <= matPlastico; i++){
-            System.out.println(media(matPrecos));
+        double valores[][] = new double[4][4];
+        carregaValores(valores);
+        for (int i = 0; i < valores.length; i++){
+            for (int j = 0; j < valores[i].length; j++){
+                System.out.print(valores[i][j]+" ");
+            }
+            System.out.println();
         }
+
     }
 }
