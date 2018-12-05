@@ -14,49 +14,44 @@ Link de acesso: https://www.youtube.com/playlist?list=PLxI8Can9yAHfK6wdaMUO74lmo
 import java.text.DecimalFormat;
 
 public class AreaCasa {
-    static double valorM2;
+    double valorM2 = 1500;
+    double lateral = 10;
+    double cquarto = 10;
 
     AreaCasa(){
-        this(1500.0);
+
     }
     AreaCasa(double valorM2){
         this.valorM2 = valorM2;
     }
+    AreaCasa(double lateral, double cquarto){
+        this.lateral = lateral;
+        this.cquarto = cquarto;
+    }
+    AreaCasa(double lateral, double cquarto, double valorM2){
+        this(lateral, cquarto);
+        this.valorM2 = valorM2;
+    }
 
-    static double Cabana (double lateral, double cquarto) {
+    double Cabana () {
         double areaTotal = -1;
-        if (lateral >=0 && cquarto >= 0){
-            areaTotal = lateral * lateral;
-            areaTotal = cquarto * lateral;
+        if (this.lateral >= 0 && this.cquarto >= 0){
+            areaTotal = this.lateral * this.lateral;
+            areaTotal = this.cquarto * this.lateral;
         }
         return (areaTotal);
     }
 
 
-    static double valor(double area) {
-        if (area >= 0)
-            return (valorM2 * area);
+    double valor(double area) {
+        if (area >= 0){
+            return (this.valorM2 * area);
+        }
         return (-1);
     }
 
 
     public static void main(String[]args) {
-        DecimalFormat dc = new DecimalFormat("0.00");
 
-        Cabana (11,7);
-
-        double precoConstrucao;
-        boolean valorOK = false;
-
-        precoConstrucao = valor(20);
-        valorOK = precoConstrucao >= 0;
-
-        System.out.print("Valor para construir ");
-
-        if(valorOK){
-            System.out.println("equivalente:"+precoConstrucao);
-        } else {
-            System.out.println("nao foi obtido: AREA NEGATIVA!!!");
-        }
     }
 }
