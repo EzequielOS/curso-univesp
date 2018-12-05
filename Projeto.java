@@ -18,6 +18,12 @@ public class Projeto {
     }
 
     public static void main (String[] args){
-        System.out.println(area(15,10,4.2));
+        AreaCasa casa1 = new AreaCasa();
+        AreaCasa casa2 = new AreaCasa();
+
+        casa2.valorM2 = 1270;
+
+        System.out.println("Valor Casa1: " + casa1.valor(casa1.Cabana(15,10)));
+        System.out.println("\nValor Casa2: " + casa2.valor(casa2.Cabana(18,8)));
     }
 }
