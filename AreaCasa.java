@@ -14,7 +14,15 @@ Link de acesso: https://www.youtube.com/playlist?list=PLxI8Can9yAHfK6wdaMUO74lmo
 import java.text.DecimalFormat;
 
 public class AreaCasa {
-    static double valorM2 = 1500;
+    static double valorM2;
+
+    AreaCasa(){
+        this(1500.0);
+    }
+    AreaCasa(double valorM2){
+        this.valorM2 = valorM2;
+    }
+
     static double Cabana (double lateral, double cquarto) {
         double areaTotal = -1;
         if (lateral >=0 && cquarto >= 0){
